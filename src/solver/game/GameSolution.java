@@ -1,6 +1,7 @@
 package solver.game;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Class to wrap the game solution along with other information.
@@ -28,6 +29,7 @@ public class GameSolution {
 
     public void setPath(ArrayList<GameState> path) {
         this.path = path;
+        Collections.reverse(this.path);
     }
 
     public Integer getSearchDepth() {

@@ -12,9 +12,9 @@ public class ManhattanHeuristic implements HeuristicEvaluator {
     public Integer getHeuristicValue(GameState state) {
         Integer[][] puzzleLayout = state.getPuzzleLayout();
         Integer heuristicValue = 0;
-        for (int i = 0; i < puzzleLayout.length; i++) {
-            for (int j = 0; j < puzzleLayout[i].length; j++) {
-                heuristicValue += (puzzleLayout[i][j]);
+        for (int i = 0; i < Constants.BOARD_ROWS; i++) {
+            for (int j = 0; j < Constants.BOARD_COLS; j++) {
+                heuristicValue += getManhattanDistance(puzzleLayout[i][j], i, j);
             }
         }
         return heuristicValue;
